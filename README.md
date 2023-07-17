@@ -1,17 +1,14 @@
-INVENTORY SYSTEM
-
-##Phase_1
-- [ ] login
-    -[ ]Admin
-    -[ ]User
+## Inventory system
+## First Phase
+- [ ] Login
+    - [ ] Rider
+    - [ ] User
 - [ ] Register
-    -[ ]Admin
-    -[ ]User
-    
-
-##Phase_2
+   - [ ] Rider
+   - [ ] User
 
 
+## Second Phase
 
 
 
