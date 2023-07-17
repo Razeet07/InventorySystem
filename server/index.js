@@ -50,7 +50,7 @@ res.json({
 app.delete('/products/:id',async(req, res) => {
   await Products.findByIdAndDelete(req.params.id)
   res.json({
-    msg: "new has been deleted"
+    msg: "new has been Deleted"
   })
 
   })
