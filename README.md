@@ -4,11 +4,12 @@
 The Inventory System Project is developed to provide a comprehensive solution for inventory management. It allows users to add, edit, and remove products, track stock levels, and generate reports. 
 
 ## Features
-Inventory Control
-Inventory Optimization
-Inventory Management
-Inventory Barcoding
-Inventory Alerts
+
+1.Inventory Control
+2.Inventory Optimization
+3.Inventory Management
+4.Inventory Barcoding
+5.Inventory Alerts
 
 
 # First Phase
