@@ -5,11 +5,20 @@ The Inventory System Project is developed to provide a comprehensive solution fo
 
 ## Features
 
-1.Inventory Control
-2.Inventory Optimization
-3.Inventory Management
-4.Inventory Barcoding
-5.Inventory Alerts
+- **Inventory Control*
+- **Inventory Optimization*
+- **Inventory Management*
+- **Inventory Barcoding* 
+- **Inventory Alerts*
+
+## Technologies Used
+
+The Inventory System Project utilizes the following technologies:
+
+- **NextJs:** Next.js is a popular open-source React framework used for building server-rendered React applications. 
+- **Node:**Node.js is an open-source, cross-platform runtime environment that allows developers to execute JavaScript code outside the browser.
+- **MongoBD:** The relational database system to store and manage inventory data.
+- **Express** Express is a minimalist and flexible web application framework for Node.js.
 
 
 # First Phase
