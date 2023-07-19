@@ -1,14 +1,14 @@
 ## [ FlashStack ]
 
 ## Introduction
-# The Inventory System Project is developed to provide a comprehensive solution for inventory management. It allows users to add, edit, and remove products, track stock levels, and generate reports. 
+The Inventory System Project is developed to provide a comprehensive solution for inventory management. It allows users to add, edit, and remove products, track stock levels, and generate reports. 
 
 ## Features
-# Inventory Control
-# Inventory Optimization
-# Inventory Management
-# Inventory Barcoding
-# Inventory Alerts
+Inventory Control
+Inventory Optimization
+Inventory Management
+Inventory Barcoding
+Inventory Alerts
 
 
 # First Phase
