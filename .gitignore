@@ -28,7 +28,7 @@ server/node_modules
 client/node_modules 
 jspm_packages 
 # Optional npm cache directory 
-.npm 
+.npm    
 
 # Optional REPL history 
 .node_repl_history 
@@ -36,3 +36,7 @@ jspm_packages
 
 #Excluding build directory 
 public/
+
+.env
+**/.env
+/server/.env
