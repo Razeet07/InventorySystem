@@ -16,7 +16,7 @@ export default function index() {
                   </form>
                 <div className='btn'>
                   
-                  <a href='/login' >Request now</a>
+                  <a href='/login' >ADD PRODUCT</a>
                 </div>
             </div>
           </div>
