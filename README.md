@@ -1,20 +1,22 @@
 ## FlashStack 
-
+![My Image](client/public/my-image.jpg)
 ## Introduction
 The Inventory System Project is developed to provide a comprehensive solution for inventory management. It allows users to add, edit, and remove products, track stock levels, and generate reports. 
 
 ## Features
 
 - [ ] Inventory Control
-- [ ] Inventory Optimization
+- [ ] Inventory Tracking
 - [ ] Inventory Management
-- [ ] Inventory Barcoding
-- [ ] Inventory Alerts
- 
+- [ ] Barcode/QR Code Integration
+- [ ] Reporting and Analytics
+- [ ] Order Management 
+- [ ] Notifications and Alerts
+- [ ] Supplier Management
+- [ ] Data Import/Export
+
 ## Technologies Used
-
 The Inventory System Project utilizes the following technologies:
-
 - **NextJs:** Next.js is a popular open-source React framework used for building server-rendered React applications. 
 - **Node:** Node.js is an open-source, cross-platform runtime environment that allows developers to execute JavaScript code outside the browser.
 - **MongoBD:** The relational database system to store and manage inventory data.
