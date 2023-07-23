@@ -19,7 +19,9 @@ const Register = () => {
         .oneOf([Yup.ref('password'), null], 'Passwords must match'),
         email: Yup.string().email('Invalid email').required('Required'),
       });
+
       const hanldeRegiser = async(values)=>{
+        debugger;
       const {confirmPassword, ...formFields} = values
       const requestOptions = {
         method : 'POST',
