@@ -15,7 +15,7 @@ const Login = () => {
         <Header/>
       <div className='container'> 
       <div className="app--login">
-        <h2>ADMIN Login</h2>
+        <h2>Login</h2>
         <Formik
          initialValues={{
             phoneNumber: '',
