@@ -5,12 +5,15 @@ import { useRouter } from 'next/navigation'
 import { Button, message } from 'antd';
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import { setUserDetails } from '@/redux/reducerSlice/users';
+import { useDispatch } from 'react-redux';
 
 const Register = () => {
-    const router = useRouter()
-    const [msg, contextHolder] = message.useMessage();
-    const SignupSchema = Yup.object().shape({
-        fullName: Yup.string()
+      const router = useRouter()
+      const dispatch = useDispatch()
+      const [msg, contextHolder] = message.useMessage();   
+       const SignupSchema = Yup.object().shape({
+      fullName: Yup.string()
           .min(2, 'Too Short!')
           .max(50, 'Too Long!')
           .required('Required'),
@@ -24,44 +27,46 @@ const Register = () => {
         email: Yup.string().email('Invalid email').required('Required'),
       });
 
-      const hanldeRegiser = async(values)=>{
-      
-      const {confirmPassword, ...formFields} = values
-      const requestOptions = {
-        method : 'POST',
-        headers : {'Content-Type':'application/json'},
-        body: JSON.stringify(formFields)
-      };
-      const res = await fetch('http://localhost:4000/register', requestOptions)
-      const data = await res.json()
-      if(data){
-        msg.info(data.msg);
-        router.push('/')
-      }
-      
-    }
 
+      const handleRegister = async(values) => {
+        const {confirmPassword, ...formFields }= values
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formFields)
+      };
+      const res = await fetch('http://localhost:4000/register',requestOptions)
+      const data = await res.json()
+      if(data && res.status==200) { 
+        debugger;
+        dispatch(setUserDetails(data))
+        router.push('/')
+        setTimeout(() => {
+              msg.info(data.msg);
+        }, 2000);
+      }else{
+        msg.info(res.statusText);
+      }
+      }
     return(
         <>
-        {contextHolder}
+      {contextHolder}
         <Header/>
       <div className='container'> 
       <div className="app--login">
-        <h2>Manager</h2>
+        <h2>Sign up</h2>
         <Formik
          initialValues={{
             fullName: '',
             email: '',
             phoneNumber: '',
-            password: '',
+            password:'',
             confirmPassword: ''
          }}
          validationSchema={SignupSchema}
          onSubmit={values => {
-          hanldeRegiser(values)
-         
+          handleRegister(values)
          }}
-         
        >
          {({ errors, touched }) => (
            <Form>
@@ -69,14 +74,13 @@ const Register = () => {
              {errors.fullName && touched.fullName ? (
                <div>{errors.fullName}</div>
              ) : null}
-             
              <Field name="email" type="email" placeholder="Email"/>
              {errors.email && touched.email ? <div>{errors.email}</div> : null}
              <Field name="password" type="password" placeholder="Password"/>
              {errors.password && touched.password ? <div>{errors.password}</div> : null}
              <Field name="confirmPassword" type="password" placeholder="Confirm Password"/>
              {errors.confirmPassword && touched.confirmPassword ? <div>{errors.confirmPassword}</div> : null}
-             <Field name="phoneNumber" type="text" placeholder="Phone Number"/>
+             <Field name="phoneNumber" type="text"  placeholder="Phone Number"/>
              {errors.phoneNumber && touched.phoneNumber ? <div>{errors.phoneNumber}</div> : null}
              <button type="submit">Signup</button>
            </Form>
@@ -86,6 +90,10 @@ const Register = () => {
       </div>
       </div>
       <Footer/>
+      <div>
+      
+
+      </div>
       </>
     )
   }
