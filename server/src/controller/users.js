@@ -19,7 +19,6 @@ const registerUser =  async(req, res) => {
       req.body.password = await bcrypt.hash(req.body.password, saltRounds)
       //step 3 jwt token for user
       const token = jwt.sign({ phoneNumber:req.body.phoneNumber },process.env.SECRET_KEY);
-
       const data = await Users.create(req.body)
       if(data){
 
@@ -39,6 +38,39 @@ const registerUser =  async(req, res) => {
     }
   }
 
+  const loginUser =  async(req, res) => {
+    try{
+        const data = await Users.findOne({phoneNumber:req.body.phoneNumber})
+        if(data){
 
+          const isMatched =  await bcrypt.compare(req.body.password, data.password) 
+          if(isMatched){
 
-module.exports={registerUser};
+   
+
+          const token = jwt.sign({ phoneNumber:req.body.phoneNumber },process.env.SECRET_KEY);
+          res.json({
+            token:token,
+            success:true,
+            userDetails:data
+          })
+        }else{
+          res.json({
+            success:false,
+            msg:"Password didn't matched"
+          })
+        }
+        
+        }else{
+          res.json({
+            success:false,
+            msg:"Invalid PhoneNumber and Password"
+          })
+        }   
+    }
+      catch(err){
+        console.log(err)
+      }
+    }
+
+module.exports={registerUser, loginUser};
