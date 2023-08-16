@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
-import Heroimg from '../../public/Green.png'
+import Heroimg from '../../public/Green.jpg'
 import Footer from '@/components/Footer'
 import { Tabs } from 'antd';
 
