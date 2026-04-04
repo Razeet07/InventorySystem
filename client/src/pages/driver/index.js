@@ -1,7 +1,7 @@
 import React from "react";
 function Driver(){
     return(
-        <div>hello i a driver</div>
+        <div>hello i am a driver</div>
     )
 }
 
